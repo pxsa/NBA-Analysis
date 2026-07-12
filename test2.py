@@ -1,3 +1,5 @@
 print('smoking kills ;)')
 print('everybody dies')
-print('chert o pert')
+
+
+print('But not everybody dies soon')
