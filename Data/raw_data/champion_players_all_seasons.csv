@@ -1,0 +1,77 @@
+﻿season,champion_team,team_code,player_id,player_name,player_url,number,position,height,weight,birth_date,birth_place,experience,college,age,games,minutes,win_shares
+2020-21,Milwaukee Bucks,MIL,adamsja01,Jaylen Adams,https://www.basketball-reference.com/players/a/adamsja01.html,6,PG,6-0,225,1996-05-04,us US,2,St. Bonaventure,24,7,18,-0.1
+2020-21,Milwaukee Bucks,MIL,antetgi01,Giannis Antetokounmpo,https://www.basketball-reference.com/players/a/antetgi01.html,34,PF,6-11,243,1994-12-06,gr GR,7,,26,61,2013,10.2
+2020-21,Milwaukee Bucks,MIL,antetth01,Thanasis Antetokounmpo,https://www.basketball-reference.com/players/a/antetth01.html,43,SF,6-7,219,1992-07-18,gr GR,2,,28,57,551,0.7
+2020-21,Milwaukee Bucks,MIL,augusdj01,D.J. Augustin,https://www.basketball-reference.com/players/a/augusdj01.html,12,PG,5-11,183,1987-11-10,us US,12,Texas,33,57,1129,2.1
+2020-21,Milwaukee Bucks,MIL,bryanel01,Elijah Bryant,https://www.basketball-reference.com/players/b/bryanel01.html,3,SG,6-5,210,1995-04-19,us US,R,"Elon University , BYU",25,1,32,0.0
+2020-21,Milwaukee Bucks,MIL,connapa01,Pat Connaughton,https://www.basketball-reference.com/players/c/connapa01.html,24,SG,6-5,209,1993-01-06,us US,5,Notre Dame,28,69,1575,3.5
+2020-21,Milwaukee Bucks,MIL,craigto01,Torrey Craig,https://www.basketball-reference.com/players/c/craigto01.html,3,SF,6-5,221,1990-12-19,us US,3,USC Upstate,30,50,803,2.2
+2020-21,Milwaukee Bucks,MIL,diakima01,Mamadi Diakite,https://www.basketball-reference.com/players/d/diakima01.html,25,PF,6-9,228,1997-01-21,gn GN,R,Virginia,24,14,141,0.3
+2020-21,Milwaukee Bucks,MIL,divindo01,Donte DiVincenzo,https://www.basketball-reference.com/players/d/divindo01.html,0,SG,6-4,203,1997-01-31,us US,2,Villanova,24,66,1814,3.6
+2020-21,Milwaukee Bucks,MIL,forbebr01,Bryn Forbes,https://www.basketball-reference.com/players/f/forbebr01.html,7,SG,6-2,205,1993-07-23,us US,4,Michigan State,27,70,1354,2.7
+2020-21,Milwaukee Bucks,MIL,holidjr01,Jrue Holiday,https://www.basketball-reference.com/players/h/holidjr01.html,21,PG,6-4,220,1990-06-12,us US,11,UCLA,30,59,1907,6.6
+2020-21,Milwaukee Bucks,MIL,jacksju01,Justin Jackson,https://www.basketball-reference.com/players/j/jacksju01.html,44,SF,6-8,220,1995-03-28,us US,3,UNC,25,34,577,0.2
+2020-21,Milwaukee Bucks,MIL,kurucro01,Rodions Kurucs,https://www.basketball-reference.com/players/k/kurucro01.html,00,SF,6-9,228,1998-02-05,lv LV,2,,22,21,125,-0.1
+2020-21,Milwaukee Bucks,MIL,lopezbr01,Brook Lopez,https://www.basketball-reference.com/players/l/lopezbr01.html,11,C,7-1,282,1988-04-01,us US,12,Stanford,32,70,1902,5.3
+2020-21,Milwaukee Bucks,MIL,merrisa01,Sam Merrill,https://www.basketball-reference.com/players/m/merrisa01.html,15,SG,6-4,205,1996-05-15,us US,R,Utah State University,24,30,233,0.5
+2020-21,Milwaukee Bucks,MIL,middlkh01,Khris Middleton,https://www.basketball-reference.com/players/m/middlkh01.html,22,SF,6-7,222,1991-08-12,us US,8,Texas A&M,29,68,2269,6.4
+2020-21,Milwaukee Bucks,MIL,nworajo01,Jordan Nwora,https://www.basketball-reference.com/players/n/nworajo01.html,13,SF,6-8,225,1998-09-09,us US,R,Louisville,22,30,274,0.4
+2020-21,Milwaukee Bucks,MIL,portibo01,Bobby Portis,https://www.basketball-reference.com/players/p/portibo01.html,9,C,6-9,250,1995-02-10,us US,5,Arkansas,25,66,1372,4.8
+2020-21,Milwaukee Bucks,MIL,teaguje01,Jeff Teague,https://www.basketball-reference.com/players/t/teaguje01.html,5,PG,6-3,195,1988-06-10,us US,11,Wake Forest,32,55,950,1.6
+2020-21,Milwaukee Bucks,MIL,toupaax01,Axel Toupane,https://www.basketball-reference.com/players/t/toupaax01.html,66,SF,6-7,210,1992-07-23,fr FR,2,,28,8,61,0.1
+2020-21,Milwaukee Bucks,MIL,tuckepj01,P.J. Tucker,https://www.basketball-reference.com/players/t/tuckepj01.html,17,PF,6-5,245,1985-05-05,us US,9,Texas,35,52,1356,1.0
+2020-21,Milwaukee Bucks,MIL,wilsodj01,D.J. Wilson,https://www.basketball-reference.com/players/w/wilsodj01.html,5,PF,6-10,231,1996-02-19,us US,3,Michigan,24,35,433,0.3
+2021-22,Golden State Warriors,GSW,bjeline01,Nemanja Bjelica,https://www.basketball-reference.com/players/b/bjeline01.html,8,C,6-10,234,1988-05-09,rs RS,6,,33,71,1143,3.0
+2021-22,Golden State Warriors,GSW,chiozch01,Chris Chiozza,https://www.basketball-reference.com/players/c/chiozch01.html,2,PG,5-11,179,1995-11-21,us US,3,Florida,26,34,372,0.0
+2021-22,Golden State Warriors,GSW,curryst01,Stephen Curry,https://www.basketball-reference.com/players/c/curryst01.html,30,PG,6-2,185,1988-03-14,us US,12,Davidson,33,64,2211,8.0
+2021-22,Golden State Warriors,GSW,dowtije01,Jeff Dowtin Jr.,https://www.basketball-reference.com/players/d/dowtije01.html,21,PG,6-3,177,1997-05-10,us US,R,Rhode Island,24,9,108,0.0
+2021-22,Golden State Warriors,GSW,greendr01,Draymond Green,https://www.basketball-reference.com/players/g/greendr01.html,23,PF,6-6,230,1990-03-04,us US,9,Michigan State,31,46,1329,3.6
+2021-22,Golden State Warriors,GSW,iguodan01,Andre Iguodala,https://www.basketball-reference.com/players/i/iguodan01.html,9,SF,6-6,215,1984-01-28,us US,17,Arizona,38,31,603,1.6
+2021-22,Golden State Warriors,GSW,kuminjo01,Jonathan Kuminga,https://www.basketball-reference.com/players/k/kuminjo01.html,00,SF,6-7,225,2002-10-06,cd CD,R,,19,70,1185,3.0
+2021-22,Golden State Warriors,GSW,leeda03,Damion Lee,https://www.basketball-reference.com/players/l/leeda03.html,1,SG,6-6,210,1992-10-21,us US,4,"Drexel , Louisville",29,63,1256,2.7
+2021-22,Golden State Warriors,GSW,looneke01,Kevon Looney,https://www.basketball-reference.com/players/l/looneke01.html,5,C,6-9,222,1996-02-06,us US,6,UCLA,25,82,1732,6.8
+2021-22,Golden State Warriors,GSW,moodymo01,Moses Moody,https://www.basketball-reference.com/players/m/moodymo01.html,4,SG,6-5,211,2002-05-31,us US,R,Arkansas,19,52,607,1.3
+2021-22,Golden State Warriors,GSW,paytoga02,Gary Payton II,https://www.basketball-reference.com/players/p/paytoga02.html,0,SG,6-2,195,1992-12-01,us US,5,Oregon State,29,71,1248,5.2
+2021-22,Golden State Warriors,GSW,poolejo01,Jordan Poole,https://www.basketball-reference.com/players/p/poolejo01.html,3,SG,6-4,194,1999-06-19,us US,2,Michigan,22,76,2283,6.0
+2021-22,Golden State Warriors,GSW,porteot01,Otto Porter Jr.,https://www.basketball-reference.com/players/p/porteot01.html,32,PF,6-8,198,1993-06-03,us US,8,Georgetown,28,63,1396,4.9
+2021-22,Golden State Warriors,GSW,thompkl01,Klay Thompson,https://www.basketball-reference.com/players/t/thompkl01.html,11,SG,6-5,220,1990-02-08,us US,8,Washington State,31,32,941,1.8
+2021-22,Golden State Warriors,GSW,toscaju01,Juan Toscano-Anderson,https://www.basketball-reference.com/players/t/toscaju01.html,95,SF,6-6,209,1993-04-10,us US,2,Marquette,28,73,994,2.0
+2021-22,Golden State Warriors,GSW,weathqu01,Quinndary Weatherspoon,https://www.basketball-reference.com/players/w/weathqu01.html,12,SG,6-3,207,1996-09-10,us US,2,Mississippi State,25,11,73,0.2
+2021-22,Golden State Warriors,GSW,wiggian01,Andrew Wiggins,https://www.basketball-reference.com/players/w/wiggian01.html,22,SF,6-6,197,1995-02-23,ca CA,7,Kansas,26,73,2330,5.1
+2022-23,Denver Nuggets,DEN,braunch01,Christian Braun,https://www.basketball-reference.com/players/b/braunch01.html,0,SG,6-6,220,2001-04-17,us US,R,Kansas,21,76,1181,1.9
+2022-23,Denver Nuggets,DEN,brownbr01,Bruce Brown,https://www.basketball-reference.com/players/b/brownbr01.html,11,SF,6-4,202,1996-08-15,us US,4,Miami (FL),26,80,2280,4.3
+2022-23,Denver Nuggets,DEN,bryanth01,Thomas Bryant,https://www.basketball-reference.com/players/b/bryanth01.html,13,C,6-9,248,1997-07-31,us US,5,Indiana,25,59,1081,4.1
+2022-23,Denver Nuggets,DEN,caldwke01,Kentavious Caldwell-Pope,https://www.basketball-reference.com/players/c/caldwke01.html,5,SG,6-5,204,1993-02-18,us US,9,Georgia,29,76,2381,4.5
+2022-23,Denver Nuggets,DEN,cancavl01,Vlatko Čančar,https://www.basketball-reference.com/players/c/cancavl01.html,31,PF,6-8,236,1997-04-10,si SI,3,,25,60,889,1.7
+2022-23,Denver Nuggets,DEN,gordoaa01,Aaron Gordon,https://www.basketball-reference.com/players/g/gordoaa01.html,50,PF,6-8,235,1995-09-16,us US,8,Arizona,27,68,2055,6.8
+2022-23,Denver Nuggets,DEN,greenje02,Jeff Green,https://www.basketball-reference.com/players/g/greenje02.html,32,PF,6-8,235,1986-08-28,us US,14,Georgetown,36,56,1091,1.7
+2022-23,Denver Nuggets,DEN,hylanbo01,Bones Hyland,https://www.basketball-reference.com/players/h/hylanbo01.html,3,PG,6-2,169,2000-09-14,us US,1,VCU,22,56,1085,1.4
+2022-23,Denver Nuggets,DEN,jacksre01,Reggie Jackson,https://www.basketball-reference.com/players/j/jacksre01.html,7,PG,6-2,208,1990-04-16,it IT,11,Boston College,32,68,1657,0.6
+2022-23,Denver Nuggets,DEN,jokicni01,Nikola Jokić,https://www.basketball-reference.com/players/j/jokicni01.html,15,C,6-11,284,1995-02-19,rs RS,7,,27,69,2323,14.9
+2022-23,Denver Nuggets,DEN,jordade01,DeAndre Jordan,https://www.basketball-reference.com/players/j/jordade01.html,6,C,6-11,265,1988-07-21,us US,14,Texas A&M,34,39,586,1.4
+2022-23,Denver Nuggets,DEN,murraja01,Jamal Murray,https://www.basketball-reference.com/players/m/murraja01.html,27,PG,6-4,215,1997-02-23,ca CA,5,Kentucky,25,65,2133,5.1
+2022-23,Denver Nuggets,DEN,nnajize01,Zeke Nnaji,https://www.basketball-reference.com/players/n/nnajize01.html,22,PF,6-10,240,2001-01-09,us US,2,Arizona,22,53,728,1.6
+2022-23,Denver Nuggets,DEN,portemi01,Michael Porter Jr.,https://www.basketball-reference.com/players/p/portemi01.html,1,SF,6-10,218,1998-06-29,us US,3,Missouri,24,62,1798,4.3
+2022-23,Denver Nuggets,DEN,reedda01,Davon Reed,https://www.basketball-reference.com/players/r/reedda01.html,9,SG,6-5,206,1995-06-11,us US,3,Miami (FL),27,43,342,0.1
+2022-23,Denver Nuggets,DEN,smithis01,Ish Smith,https://www.basketball-reference.com/players/s/smithis01.html,14,PG,6-0,175,1988-07-05,us US,12,Wake Forest,34,43,398,-0.5
+2022-23,Denver Nuggets,DEN,watsope01,Peyton Watson,https://www.basketball-reference.com/players/w/watsope01.html,8,SG,6-8,200,2002-09-11,us US,R,UCLA,20,23,186,0.3
+2022-23,Denver Nuggets,DEN,whiteja03,Jack White,https://www.basketball-reference.com/players/w/whiteja03.html,10,SF,6-7,225,1997-08-05,au AU,R,Duke,25,17,66,0.1
+2023-24,Boston Celtics,BOS,bantoda01,Dalano Banton,https://www.basketball-reference.com/players/b/bantoda01.html,45,PG,6-8,203,1999-11-07,ca CA,2,Nebraska,24,54,1047,0.5
+2023-24,Boston Celtics,BOS,brissos01,Oshae Brissett,https://www.basketball-reference.com/players/b/brissos01.html,12,SF,6-7,210,1998-06-20,ca CA,4,Syracuse,25,55,630,1.7
+2023-24,Boston Celtics,BOS,brownja02,Jaylen Brown,https://www.basketball-reference.com/players/b/brownja02.html,7,SF,6-6,223,1996-10-24,us US,7,California,27,70,2343,5.9
+2023-24,Boston Celtics,BOS,davisjd01,JD Davison,https://www.basketball-reference.com/players/d/davisjd01.html,20,SG,6-1,195,2002-10-03,us US,1,Alabama,21,8,39,0.2
+2023-24,Boston Celtics,BOS,hausesa01,Sam Hauser,https://www.basketball-reference.com/players/h/hausesa01.html,30,SF,6-7,217,1997-12-08,us US,2,"Marquette , Virginia",26,79,1741,4.9
+2023-24,Boston Celtics,BOS,holidjr01,Jrue Holiday,https://www.basketball-reference.com/players/h/holidjr01.html,4,PG,6-4,220,1990-06-12,us US,14,UCLA,33,69,2263,6.3
+2023-24,Boston Celtics,BOS,horfoal01,Al Horford,https://www.basketball-reference.com/players/h/horfoal01.html,42,C,6-8,240,1986-06-03,do DO,16,Florida,37,65,1740,6.2
+2023-24,Boston Celtics,BOS,kornelu01,Luke Kornet,https://www.basketball-reference.com/players/k/kornelu01.html,40,C,7-1,250,1995-07-15,us US,6,Vanderbilt,28,63,983,5.1
+2023-24,Boston Celtics,BOS,mykhasv01,Svi Mykhailiuk,https://www.basketball-reference.com/players/m/mykhasv01.html,50,SF,6-7,205,1997-06-10,ua UA,5,Kansas,26,41,413,0.9
+2023-24,Boston Celtics,BOS,peterdr01,Drew Peterson,https://www.basketball-reference.com/players/p/peterdr01.html,13,PF,6-8,205,1999-11-09,us US,R,"Rice University , USC",24,3,23,0.1
+2023-24,Boston Celtics,BOS,porzikr01,Kristaps Porziņģis,https://www.basketball-reference.com/players/p/porzikr01.html,8,C,7-2,240,1995-08-02,lv LV,7,,28,57,1690,7.9
+2023-24,Boston Celtics,BOS,pritcpa01,Payton Pritchard,https://www.basketball-reference.com/players/p/pritcpa01.html,11,PG,6-1,195,1998-01-28,us US,3,Oregon,26,82,1825,6.1
+2023-24,Boston Celtics,BOS,quetane01,Neemias Queta,https://www.basketball-reference.com/players/q/quetane01.html,88,C,7-0,248,1999-07-13,pt PT,2,Utah State University,24,28,333,1.8
+2023-24,Boston Celtics,BOS,sprinja01,Jaden Springer,https://www.basketball-reference.com/players/s/sprinja01.html,44,SG,6-4,202,2002-09-25,us US,2,Tennessee,21,49,507,0.6
+2023-24,Boston Celtics,BOS,stevela01,Lamar Stevens,https://www.basketball-reference.com/players/s/stevela01.html,77,PF,6-7,230,1997-07-09,us US,3,Penn State,26,38,559,0.8
+2023-24,Boston Celtics,BOS,tatumja01,Jayson Tatum,https://www.basketball-reference.com/players/t/tatumja01.html,0,PF,6-8,210,1998-03-03,us US,6,Duke,25,74,2645,10.4
+2023-24,Boston Celtics,BOS,tillmxa01,Xavier Tillman Sr.,https://www.basketball-reference.com/players/t/tillmxa01.html,26,PF,6-8,245,1999-01-12,us US,3,Michigan State,25,54,974,1.4
+2023-24,Boston Celtics,BOS,walshjo01,Jordan Walsh,https://www.basketball-reference.com/players/w/walshjo01.html,27,SF,6-6,205,2004-03-03,us US,R,Arkansas,19,9,83,0.2
+2023-24,Boston Celtics,BOS,whitede01,Derrick White,https://www.basketball-reference.com/players/w/whitede01.html,9,SG,6-4,190,1994-07-02,us US,6,"Colorado-Colorado Springs , Colorado",29,73,2381,8.5
