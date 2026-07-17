@@ -5,21 +5,23 @@ from sqlalchemy import create_engine
 from src.eda import EDA
 
 
-# =========================
+# ==========================================
 # 1. Database Connection
-# =========================
-
-# توجه:
-# اطلاعات اتصال دیتابیس را قبل از اجرا با اطلاعات سیستم خودت تنظیم کنید
+# ==========================================
+# تنظیمات اتصال به MySQL Database
+# قبل از اجرا باید USERNAME و PASSWORD
+# با اطلاعات دیتابیس سیستم خودتان جایگزین شود
 
 engine = create_engine(
     "mysql+pymysql://USERNAME:PASSWORD@localhost:3306/basketball_db"
 )
 
 
-# =========================
+# ==========================================
 # 2. Load Data From SQL View
-# =========================
+# ==========================================
+# داده نهایی مورد نیاز برای تحلیل
+# از View ساخته شده در SQL خوانده می‌شود
 
 query = """
 SELECT *
@@ -33,16 +35,20 @@ df = pd.read_sql(
 )
 
 
-# =========================
-# 3. Create EDA Object
-# =========================
+# ==========================================
+# 3. Initialize EDA Class
+# ==========================================
+# ساخت آبجکت EDA
+# تمام تحلیل‌ها از طریق این کلاس انجام می‌شود
 
 eda = EDA(df)
 
 
-# =========================
-# 4. Create Reports Folder
-# =========================
+
+# ==========================================
+# 4. Create Output Folder
+# ==========================================
+# ساخت پوشه برای ذخیره نمودارها
 
 os.makedirs(
     "reports/figures",
@@ -50,9 +56,10 @@ os.makedirs(
 )
 
 
-# =========================
-# 5. Basic Report
-# =========================
+
+# ==========================================
+# 5. Data Quality Analysis
+# ==========================================
 
 print("Dataset Shape:")
 print(eda.shape())
@@ -66,13 +73,28 @@ print("\nDuplicates:")
 print(eda.duplicates())
 
 
-print("\nStatistics:")
+print("\nData Types:")
+print(eda.data_types())
+
+
+print("\nOutlier Summary:")
+print(eda.outlier_summary())
+
+
+
+# ==========================================
+# 6. Statistical Analysis
+# ==========================================
+
+print("\nStatistical Summary:")
 print(eda.statistics())
 
 
-# =========================
-# 6. Player Analysis
-# =========================
+
+# ==========================================
+# 7. Player Performance Analysis
+# ==========================================
+# بررسی بهترین بازیکنان بر اساس Metric های مختلف
 
 print("\nTop Players By BPM:")
 print(
@@ -86,9 +108,11 @@ print(
 )
 
 
-# =========================
-# 7. Team Analysis
-# =========================
+
+# ==========================================
+# 8. Team Performance Analysis
+# ==========================================
+# رتبه‌بندی تیم‌ها بر اساس مجموع Win Shares
 
 print("\nTeam Ranking:")
 print(
@@ -96,9 +120,11 @@ print(
 )
 
 
-# =========================
-# 8. Save Figures
-# =========================
+
+# ==========================================
+# 9. Visualization
+# ==========================================
+# ذخیره نمودارهای EDA
 
 eda.plot_correlation(
     "reports/figures/correlation.png"
@@ -115,3 +141,7 @@ eda.plot_distribution(
     "bpm",
     "reports/figures/bpm_distribution.png"
 )
+
+
+
+print("\nEDA Analysis Completed Successfully!")

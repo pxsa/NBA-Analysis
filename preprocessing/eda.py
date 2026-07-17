@@ -148,3 +148,35 @@ class EDA:
         )
 
         return result
+    
+    def data_types(self):
+
+        return self.df.dtypes
+    
+    
+    def outlier_summary(self):
+
+        numeric_df = self.df.select_dtypes(
+            include="number"
+        )
+
+        result = {}
+
+        for col in numeric_df.columns:
+
+            Q1 = numeric_df[col].quantile(0.25)
+            Q3 = numeric_df[col].quantile(0.75)
+
+            IQR = Q3 - Q1
+
+            lower = Q1 - 1.5 * IQR
+            upper = Q3 + 1.5 * IQR
+
+            outliers = numeric_df[
+                (numeric_df[col] < lower) |
+                (numeric_df[col] > upper)
+            ]
+
+            result[col] = len(outliers)
+
+        return result
