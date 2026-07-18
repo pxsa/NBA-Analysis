@@ -14,7 +14,7 @@ USE basketball_db;
 -- Stores all unique player nationalities.
 -- ==========================================================
 
-CREATE TABLE country (
+CREATE TABLE Country (
     country_id INT AUTO_INCREMENT PRIMARY KEY,
     country_code VARCHAR(10) NOT NULL UNIQUE
 );
@@ -24,7 +24,7 @@ CREATE TABLE country (
 -- Stores all unique colleges.
 -- ==========================================================
 
-CREATE TABLE college (
+CREATE TABLE College (
     college_id INT AUTO_INCREMENT PRIMARY KEY,
     college_name VARCHAR(255) NOT NULL UNIQUE
 );
@@ -34,7 +34,7 @@ CREATE TABLE college (
 -- Stores standardized basketball positions.
 -- ==========================================================
 
-CREATE TABLE position (
+CREATE TABLE Position (
     position_id INT AUTO_INCREMENT PRIMARY KEY,
     position_code VARCHAR(5) NOT NULL UNIQUE
 );
@@ -44,7 +44,7 @@ CREATE TABLE position (
 -- Stores NBA seasons.
 -- ==========================================================
 
-CREATE TABLE season (
+CREATE TABLE Season (
     season_id INT AUTO_INCREMENT PRIMARY KEY,
     season_name VARCHAR(20) NOT NULL UNIQUE
 );
@@ -56,7 +56,7 @@ CREATE TABLE season (
 -- team abbreviations.
 -- ==========================================================
 
-CREATE TABLE team (
+CREATE TABLE Team (
     team_id INT AUTO_INCREMENT PRIMARY KEY,
     team_code VARCHAR(5) NOT NULL UNIQUE,
     team_name VARCHAR(100)
@@ -67,7 +67,7 @@ CREATE TABLE team (
 -- Stores player profile information.
 -- ==========================================================
 
-CREATE TABLE player (
+CREATE TABLE Player (
     player_id VARCHAR(20) PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
     birth_date DATE,
@@ -90,7 +90,7 @@ CREATE TABLE player (
 -- Player <-> College (Many-to-Many)
 -- ==========================================================
 
-CREATE TABLE player_college (
+CREATE TABLE PlayerCollege (
     player_id VARCHAR(20),
     college_id INT,
 
@@ -109,7 +109,7 @@ CREATE TABLE player_college (
 -- Player <-> Position (Many-to-Many)
 -- ==========================================================
 
-CREATE TABLE player_position (
+CREATE TABLE PlayerPosition (
     player_id VARCHAR(20),
     position_id INT,
 
@@ -131,7 +131,7 @@ CREATE TABLE player_position (
 -- (player_id, season_id)
 -- ==========================================================
 
-CREATE TABLE player_season_stats (
+CREATE TABLE PlayerSeasonStats (
 
     player_id VARCHAR(20),
     season_id INT,
@@ -172,7 +172,7 @@ CREATE TABLE player_season_stats (
 -- therefore team information is intentionally omitted.
 -- ==========================================================
 
-CREATE TABLE mvp_award (
+CREATE TABLE MVP_Award (
 
     player_id VARCHAR(20),
     season_id INT,
@@ -197,7 +197,7 @@ CREATE TABLE mvp_award (
 -- roster in each season.
 -- ==========================================================
 
-CREATE TABLE champion_team_player (
+CREATE TABLE ChampionTeamPlayer (
 
     player_id VARCHAR(20),
     season_id INT,
