@@ -1,42 +1,38 @@
 # NBA Analysis
 
-پروژه‌ی تحلیل داده‌های NBA — از جمع‌آوری داده با Web Scraping تا ذخیره‌سازی در دیتابیس رابطه‌ای MySQL و تحلیل اکتشافی داده (EDA).
+An end-to-end NBA data project — from web scraping, through storage in a relational MySQL database, to exploratory data analysis (EDA).
 
-در این پروژه اطلاعات بازیکنان NBA، آمار پیشرفته‌ی فصلی، تیم‌های قهرمان و جوایز MVP از منبع خام استخراج، پاک‌سازی، نرمال‌سازی و در یک دیتابیس رابطه‌ای ذخیره شده‌اند. در نهایت داده‌ها برای تحلیل آماری و مصورسازی مورد بررسی قرار گرفته‌اند.
+Player information, seasonal advanced stats, championship team rosters, and MVP award data are scraped from the source, cleaned, normalized, and stored in a relational database. The resulting data is then explored through statistical analysis and visualization.
 
 ---
 
 ## Features
 
-* **Web Scraping**
+- **Web Scraping**
+  - Extraction of raw HTML from player pages and team pages
+  - Conversion of raw HTML into structured data files
 
-  * استخراج HTML خام صفحات بازیکنان و اطلاعات تیم‌ها
-  * تبدیل داده‌های خام HTML به فایل‌های ساختاریافته
+- **Data Preprocessing**
+  - Cleaning and standardizing the data
+  - Preparing player information, position, country, college, and season stats
 
-* **Data Preprocessing**
+- **Relational Database**
+  - Schema design and storage in MySQL
+  - 11 normalized tables modeling the relationships within NBA data
 
-  * پاک‌سازی و استانداردسازی داده‌ها
-  * آماده‌سازی اطلاعات بازیکنان، پوزیشن، کشور، کالج و آمار فصل‌ها
-
-* **Relational Database**
-
-  * طراحی و ذخیره داده‌ها در MySQL
-  * استفاده از ۱۱ جدول نرمالایز شده برای مدل‌سازی روابط NBA
-
-* **Exploratory Data Analysis (EDA)**
-
-  * تحلیل آماری داده‌ها
-  * بررسی توزیع متغیرها، همبستگی‌ها و عملکرد بازیکنان
+- **Exploratory Data Analysis (EDA)**
+  - Statistical analysis of the data
+  - Examination of variable distributions, correlations, and player performance
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```
 NBA-Analysis/
 │
 ├── Data/
-│   ├── raw_data/                 
+│   ├── raw_data/
 │   │   ├── players.csv
 │   │   ├── advanced_stats_all_seasons.csv
 │   │   ├── champion_players_all_seasons.csv
@@ -67,7 +63,8 @@ NBA-Analysis/
 │
 ├── analysis/
 │   ├── analysis.ipynb
-│   └── phase3_analysis.ipynb
+│   ├── phase3_analysis.ipynb
+│   └── plots/
 │
 ├── src/
 │   ├── eda.py
@@ -85,9 +82,9 @@ NBA-Analysis/
 
 ---
 
-# Database Schema
+## Database Schema
 
-دیتابیس شامل ۱۱ جدول نرمالایز شده است:
+The database consists of 11 normalized tables:
 
 ```
 country
@@ -103,9 +100,9 @@ mvp_award
 champion_team_player
 ```
 
-این جداول ارتباط بازیکنان با تیم‌ها، فصل‌ها، کشور، کالج، پوزیشن و جوایز NBA را مدل می‌کنند.
+These tables model the relationships between players, teams, seasons, countries, colleges, and NBA awards.
 
-ساختار کامل دیتابیس در فایل زیر قرار دارد:
+The full database structure is defined in:
 
 ```
 database/schema.sql
@@ -113,24 +110,24 @@ database/schema.sql
 
 ---
 
-# Installation
+## Installation
 
-## 1. Clone Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/pxsa/NBA-Analysis.git
 cd NBA-Analysis
 ```
 
-## 2. Install Requirements
+### 2. Install Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 3. Environment Variables
+### 3. Environment Variables
 
-فایل `.env-example` را به `.env` تغییر دهید و اطلاعات دیتابیس خود را وارد کنید:
+Rename `.env-example` to `.env` and fill in your database credentials:
 
 ```
 DB_USERNAME=root
@@ -142,11 +139,11 @@ DATABASE=basketball_db
 
 ---
 
-# Usage
+## Usage
 
-## 1. Web Scraping
+### 1. Web Scraping
 
-برای اجرای اسکرپینگ:
+To run the scraping scripts:
 
 ```bash
 python scraping/players_get_html.py
@@ -154,63 +151,61 @@ python scraping/players_parse_html.py
 python scraping/team.py
 ```
 
-یا اجرای نسخه Notebook:
+Or run the notebook versions:
 
 ```bash
 jupyter notebook scraping/
 ```
 
----
+### 2. Data Preprocessing
 
-## 2. Data Preprocessing
-
-برای اجرای مراحل پاک‌سازی داده:
+To run the cleaning pipeline:
 
 ```bash
 python src/preprocessing.py
 ```
 
-یا نسخه Notebook:
+Or the notebook version:
 
 ```bash
 jupyter notebook preprocessing/preprocessing.ipynb
 ```
 
----
+### 3. Database
 
-## 3. Database
-
-ساختار دیتابیس را ابتدا اجرا کنید:
+First execute the schema to set up the database structure:
 
 ```
 database/schema.sql
 ```
 
-سپس اطلاعات پردازش‌شده در دیتابیس MySQL ذخیره می‌شوند.
+The processed data is then loaded into the MySQL database.
 
----
+### 4. Exploratory Data Analysis (EDA)
 
-## 4. Exploratory Data Analysis (EDA)
-
-اجرای تحلیل:
+To run the analysis:
 
 ```bash
 python run_eda.py
 ```
 
-خروجی شامل گزارش آماری و نمودارهای تحلیل داده در پوشه:
+The output — statistical reports and data visualizations — is saved to:
 
 ```
 reports/figures/
 ```
 
-ذخیره می‌شود.
+Additional plots from the notebook-based analysis are available in:
+
+```
+analysis/plots/
+```
 
 ---
 
-# Domain Knowledge
+## Domain Knowledge
 
-برای آشنایی با مفاهیم NBA استفاده شده در پروژه، به فایل زیر مراجعه کنید:
+For background on the NBA concepts used throughout this project, see:
 
 ```
 NBA_Domain_Knowledge.md
@@ -218,16 +213,12 @@ NBA_Domain_Knowledge.md
 
 ---
 
-# Data Source
+## Data Source
 
-داده‌های این پروژه از:
-
-Basketball-Reference.com
-
-جمع‌آوری شده‌اند.
+Data for this project was collected from [Basketball-Reference.com](https://www.basketball-reference.com).
 
 ---
 
-# License
+## License
 
-این پروژه صرفاً با هدف آموزشی و تمرینی توسعه داده شده است.
+This project was developed strictly for educational and practice purposes.
