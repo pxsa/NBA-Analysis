@@ -4,7 +4,16 @@ An end-to-end NBA data project — from web scraping, through storage in a relat
 
 Player information, seasonal advanced stats, championship team rosters, and MVP award data are scraped from the source, cleaned, normalized, and stored in a relational database. The resulting data is then explored through statistical analysis and visualization.
 
----
+## Content
+
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Database Schema](#database-schema)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Results](#results)
+- [Domain Knowledge](#domain-knowledge)
+- [Data Source](#data-source)
 
 ## Features
 
@@ -24,7 +33,7 @@ Player information, seasonal advanced stats, championship team rosters, and MVP 
   - Statistical analysis of the data
   - Examination of variable distributions, correlations, and player performance
 
----
+
 
 ## Project Structure
 
@@ -80,7 +89,7 @@ NBA-Analysis/
 └── README.md
 ```
 
----
+
 
 ## Database Schema
 
@@ -108,7 +117,6 @@ The full database structure is defined in:
 database/schema.sql
 ```
 
----
 
 ## Installation
 
@@ -137,7 +145,7 @@ PORT=3306
 DATABASE=basketball_db
 ```
 
----
+
 
 ## Usage
 
@@ -189,19 +197,101 @@ To run the analysis:
 python run_eda.py
 ```
 
-The output — statistical reports and data visualizations — is saved to:
+The output — statistical reports and data visualizations — is saved to `reports/figures/`, with the notebook-based analysis figures available in `analysis/plots/`.
 
-```
-reports/figures/
-```
 
-Additional plots from the notebook-based analysis are available in:
 
-```
-analysis/plots/
-```
+## Results
 
----
+> **Note:** The captions below are placeholders inferred from figure filenames and section labels (`h1`, `h2`, `q1`, `q2`). Since I haven't reviewed the actual notebook output, edit each caption to reflect your real findings before publishing.
+
+### General EDA
+
+Overview of feature distributions, position breakdowns, and trends across seasons.
+
+<p align="center">
+  <img src="analysis/plots/eda_distributions.png" width="90%" alt="Distribution of key numeric features">
+</p>
+
+*Distribution of key numeric features across the full player-season dataset.*
+
+<p align="center">
+  <img src="analysis/plots/eda_positions.png" width="90%" alt="Breakdown by player position">
+</p>
+
+*Breakdown of players by position.*
+
+<p align="center">
+  <img src="analysis/plots/eda_season_trend.png" width="90%" alt="Trends across NBA seasons">
+</p>
+
+*Trends across the seasons covered by this dataset (2019-20 through 2025-26).*
+
+### Categorical Feature Distributions
+
+<table>
+<tr>
+<td><img src="analysis/plots/position_code_bar_chart.png" width="100%"></td>
+<td><img src="analysis/plots/height_bin_bar_chart.png" width="100%"></td>
+</tr>
+<tr>
+<td align="center"><em>Player counts by position</em></td>
+<td align="center"><em>Player counts by height bin</em></td>
+</tr>
+<tr>
+<td><img src="analysis/plots/shoots_bar_chart.png" width="100%"></td>
+<td><img src="analysis/plots/season_name_bar_chart.png" width="100%"></td>
+</tr>
+<tr>
+<td align="center"><em>Player counts by shooting hand</em></td>
+<td align="center"><em>Player counts by season</em></td>
+</tr>
+<tr>
+<td><img src="analysis/plots/low_sample_bar_chart.png" width="100%"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><em>Players flagged as low-sample (limited minutes/games)</em></td>
+<td></td>
+</tr>
+</table>
+
+### Q1 — Height Analysis
+
+<p align="center">
+  <img src="analysis/plots/q1_height_dist.png" width="48%" alt="Height distribution">
+  <img src="analysis/plots/q1_height_KDE.png" width="48%" alt="Height KDE">
+</p>
+
+*Distribution and KDE of player height (cm) across the dataset.*
+
+### Q2 — Champions vs. Top-15
+
+<p align="center">
+  <img src="analysis/plots/q2_champ_vs_top15.png" width="90%" alt="Champions vs top 15 comparison">
+</p>
+
+*Comparison between championship-roster players and the top-15 players by performance metric.*
+
+### H1 — Agility Hypothesis
+
+<p align="center">
+  <img src="analysis/plots/h1_agility_boxplot.png" width="70%" alt="Agility boxplot">
+</p>
+
+*Boxplot comparing the `agility` feature across groups tested in Hypothesis 1.*
+
+### H2 — Innate Ability Hypothesis
+
+<p align="center">
+  <img src="analysis/plots/h2_innate_ability_boxplot.png" width="70%" alt="Innate ability boxplot">
+</p>
+
+*Boxplot comparing the `innate_ability` feature across groups tested in Hypothesis 2.*
+
+For the full statistical write-up — hypotheses, test statistics, and p-values — see `analysis/analysis.ipynb` and `analysis/phase3_analysis.ipynb`.
+
+
 
 ## Domain Knowledge
 
@@ -211,14 +301,8 @@ For background on the NBA concepts used throughout this project, see:
 NBA_Domain_Knowledge.md
 ```
 
----
+
 
 ## Data Source
 
 Data for this project was collected from [Basketball-Reference.com](https://www.basketball-reference.com).
-
----
-
-## License
-
-This project was developed strictly for educational and practice purposes.
