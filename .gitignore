@@ -1,5 +1,4 @@
 venv
 nba_player_html
 .env
-*.png
 .DS_Store
