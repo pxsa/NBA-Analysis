@@ -1,96 +1,136 @@
 # NBA Analysis
 
-پروژه‌ی تحلیل داده‌های NBA — از اسکرپینگ خام سایت تا دیتابیس نرمالایز‌شده و داشبورد EDA.
+پروژه‌ی تحلیل داده‌های NBA — از جمع‌آوری داده با Web Scraping تا ذخیره‌سازی در دیتابیس رابطه‌ای MySQL و تحلیل اکتشافی داده (EDA).
 
-این پروژه اطلاعات بازیکنان، آمار پیشرفته‌ی فصلی، تیم‌های قهرمان، و رأی‌های MVP لیگ NBA را از منبع خام جمع‌آوری، تمیزکاری، در یک دیتابیس رابطه‌ای MySQL ذخیره، و در نهایت با تحلیل اکتشافی داده (EDA) بررسی می‌کند.
+در این پروژه اطلاعات بازیکنان NBA، آمار پیشرفته‌ی فصلی، تیم‌های قهرمان و جوایز MVP از منبع خام استخراج، پاک‌سازی، نرمال‌سازی و در یک دیتابیس رابطه‌ای ذخیره شده‌اند. در نهایت داده‌ها برای تحلیل آماری و مصورسازی مورد بررسی قرار گرفته‌اند.
 
 ---
 
 ## Features
 
-- **Web Scraping**: استخراج HTML خام صفحات بازیکنان، آمار پیشرفته، تیم‌های قهرمان، و خلاصه‌ی هر فصل لیگ
-- **Data Preprocessing**: تمیزکاری و نرمالایز کردن داده‌های خام (استانداردسازی پوزیشن، ملیت، کالج، و...)
-- **Relational Database**: ذخیره‌ی داده‌ها در یک دیتابیس MySQL با ۱۱ جدول نرمالایز‌شده
-- **Exploratory Data Analysis (EDA)**: تحلیل آماری و مصورسازی داده (توزیع سن، BPM، همبستگی متغیرها و...)
+* **Web Scraping**
+
+  * استخراج HTML خام صفحات بازیکنان و اطلاعات تیم‌ها
+  * تبدیل داده‌های خام HTML به فایل‌های ساختاریافته
+
+* **Data Preprocessing**
+
+  * پاک‌سازی و استانداردسازی داده‌ها
+  * آماده‌سازی اطلاعات بازیکنان، پوزیشن، کشور، کالج و آمار فصل‌ها
+
+* **Relational Database**
+
+  * طراحی و ذخیره داده‌ها در MySQL
+  * استفاده از ۱۱ جدول نرمالایز شده برای مدل‌سازی روابط NBA
+
+* **Exploratory Data Analysis (EDA)**
+
+  * تحلیل آماری داده‌ها
+  * بررسی توزیع متغیرها، همبستگی‌ها و عملکرد بازیکنان
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
-NBA-Analysis-master/
+NBA-Analysis/
 │
 ├── Data/
-│   ├── raw_data/              # فایل‌های CSV خام قبل از تمیزکاری
+│   ├── raw_data/                 
 │   │   ├── players.csv
 │   │   ├── advanced_stats_all_seasons.csv
 │   │   ├── champion_players_all_seasons.csv
 │   │   └── mvp_all_seasons.csv
-│   ├── raw_html/               # صفحات HTML خام اسکرپ‌شده (قبل از پارس)
+│   │
+│   ├── raw_html/
 │   │   ├── advanced_stats/
 │   │   ├── awards/
 │   │   ├── champion_teams/
 │   │   └── league_summary/
-│   └── sample/                 # نمونه‌ی کوچک داده برای تست سریع
+│   │
+│   └── sample/
 │
 ├── database/
-│   └── schema.sql              # ساختار دیتابیس MySQL (۱۱ جدول)
+│   ├── schema.sql
+│   └── DataBase.ipynb
 │
 ├── preprocessing/
-│   └── preprocessing.ipynb     # تمیزکاری داده + نوشتن در دیتابیس (to_sql)
+│   └── preprocessing.ipynb
 │
 ├── scraping/
-│   ├── players_get_html.ipynb  # دانلود HTML خام صفحات بازیکنان
-│   └── players_parse_html.ipynb# پارس HTML به CSV ساختاریافته
+│   ├── players_get_html.ipynb
+│   ├── players_get_html.py
+│   ├── players_parse_html.ipynb
+│   ├── players_parse_html.py
+│   ├── team.ipynb
+│   └── team.py
 │
-├── reports/
-│   └── figures/                # نمودارهای خروجی EDA (توزیع سن، BPM، همبستگی)
+├── analysis/
+│   ├── analysis.ipynb
+│   └── phase3_analysis.ipynb
 │
 ├── src/
-│   └── eda.py                  # کلاس‌های OOP برای تحلیل اکتشافی داده
+│   ├── eda.py
+│   └── preprocessing.py
 │
-├── EDA.ipynb                   # اجرای تعاملی EDA
-├── run_eda.py                  # اجرای EDA به‌صورت اسکریپت مستقل
+├── reports/
+│   └── figures/
+│
+├── run_eda.py
 ├── requirements.txt
-├── .env-example                # نمونه‌ی متغیرهای محیطی (بدون اطلاعات حساس)
-├── NBA_Domain_Knowledge.md     # مستندات دانش حوزه NBA (برای فهم مفاهیم پروژه)
+├── .env-example
+├── NBA_Domain_Knowledge.md
 └── README.md
 ```
 
 ---
 
-## Database Schema
+# Database Schema
 
-دیتابیس شامل ۱۱ جدول نرمالایز‌شده است که رابطه‌ی بازیکنان با کشور، کالج، پوزیشن، فصل، تیم، و جوایز را مدل می‌کند:
+دیتابیس شامل ۱۱ جدول نرمالایز شده است:
 
-`country` · `college` · `position` · `season` · `team` · `player` · `player_college` · `player_position` · `player_season_stats` · `mvp_award` · `champion_team_player`
+```
+country
+college
+position
+season
+team
+player
+player_college
+player_position
+player_season_stats
+mvp_award
+champion_team_player
+```
 
-ساختار کامل در [`database/schema.sql`](database/schema.sql) موجود است.
+این جداول ارتباط بازیکنان با تیم‌ها، فصل‌ها، کشور، کالج، پوزیشن و جوایز NBA را مدل می‌کنند.
+
+ساختار کامل دیتابیس در فایل زیر قرار دارد:
+
+```
+database/schema.sql
+```
 
 ---
 
-## Installation
+# Installation
 
-### 1. Clone کردن ریپو
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/pxsa/NBA-Analysis.git
 cd NBA-Analysis
 ```
 
-### 2. نصب پیش‌نیازها
+## 2. Install Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. تنظیم متغیرهای محیطی
+## 3. Environment Variables
 
-فایل `.env-example` را کپی کرده و به `.env` تغییر نام دهید، سپس مقادیر را با اطلاعات دیتابیس خودتان پر کنید:
-
-```bash
-cp .env-example .env
-```
+فایل `.env-example` را به `.env` تغییر دهید و اطلاعات دیتابیس خود را وارد کنید:
 
 ```
 DB_USERNAME=root
@@ -100,54 +140,94 @@ PORT=3306
 DATABASE=basketball_db
 ```
 
-### 4. ساخت دیتابیس
+---
 
-اسکریپت `database/schema.sql` را روی MySQL Server خودتان اجرا کنید (با MySQL Workbench، DataGrip، یا خط فرمان) تا جدول‌های خالی ساخته شوند.
+# Usage
+
+## 1. Web Scraping
+
+برای اجرای اسکرپینگ:
+
+```bash
+python scraping/players_get_html.py
+python scraping/players_parse_html.py
+python scraping/team.py
+```
+
+یا اجرای نسخه Notebook:
+
+```bash
+jupyter notebook scraping/
+```
 
 ---
 
-## Usage
+## 2. Data Preprocessing
 
-### مرحله 1: اسکرپینگ (اختیاری — داده‌ی خام از قبل در Data/raw_data/ موجود است)
+برای اجرای مراحل پاک‌سازی داده:
 
 ```bash
-jupyter notebook scraping/players_get_html.ipynb
-jupyter notebook scraping/players_parse_html.ipynb
+python src/preprocessing.py
 ```
 
-### مرحله 2: تمیزکاری و پر کردن دیتابیس
+یا نسخه Notebook:
 
 ```bash
 jupyter notebook preprocessing/preprocessing.ipynb
 ```
-این نوت‌بوک را از ابتدا تا انتها اجرا کنید (Run All) — داده‌های خام را می‌خواند، تمیز می‌کند، و در دیتابیس MySQL می‌نویسد.
 
-### مرحله 3: تحلیل اکتشافی داده (EDA)
+---
+
+## 3. Database
+
+ساختار دیتابیس را ابتدا اجرا کنید:
+
+```
+database/schema.sql
+```
+
+سپس اطلاعات پردازش‌شده در دیتابیس MySQL ذخیره می‌شوند.
+
+---
+
+## 4. Exploratory Data Analysis (EDA)
+
+اجرای تحلیل:
 
 ```bash
 python run_eda.py
 ```
-یا به‌صورت تعاملی:
-```bash
-jupyter notebook EDA.ipynb
+
+خروجی شامل گزارش آماری و نمودارهای تحلیل داده در پوشه:
+
+```
+reports/figures/
 ```
 
-خروجی شامل گزارش متنی (eda_report.txt) و نمودارها (در reports/figures/) خواهد بود.
+ذخیره می‌شود.
 
 ---
 
-## Learn More
+# Domain Knowledge
 
-برای آشنایی با اصطلاحات و قوانین NBA که در این پروژه استفاده شده‌اند، به [`NBA_Domain_Knowledge.md`](NBA_Domain_Knowledge.md) مراجعه کنید.
+برای آشنایی با مفاهیم NBA استفاده شده در پروژه، به فایل زیر مراجعه کنید:
 
----
-
-## Data Source
-
-داده‌ها از [Basketball-Reference.com](https://www.basketball-reference.com) استخراج شده‌اند.
+```
+NBA_Domain_Knowledge.md
+```
 
 ---
 
-## License
+# Data Source
 
-این پروژه صرفاً برای اهداف آموزشی ساخته شده است.
+داده‌های این پروژه از:
+
+Basketball-Reference.com
+
+جمع‌آوری شده‌اند.
+
+---
+
+# License
+
+این پروژه صرفاً با هدف آموزشی و تمرینی توسعه داده شده است.
