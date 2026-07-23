@@ -106,3 +106,82 @@ ORDER BY
   sum_vorp DESC
 LIMIT
   10;
+
+
+-- 10: Top 10 Players by Career BPM
+
+SELECT
+  p.full_name,
+  ROUND(AVG(s.bpm), 2) AS avg_bpm
+FROM
+  playerseasonstats s
+  JOIN player p ON p.player_id = s.player_id
+GROUP BY
+  p.full_name
+ORDER BY
+  avg_bpm DESC
+LIMIT
+  10
+
+
+-- 11: Which colleges have produced the most NBA players?
+SELECT
+  c.college_name,
+  COUNT(DISTINCT pc.player_id) AS total_players
+FROM
+  playercollege pc
+  JOIN college c ON c.college_id = pc.college_id
+GROUP BY
+  c.college_name
+ORDER BY
+  total_players DESC
+LIMIT
+  10;
+
+
+-- 12: Average age of players over time
+SELECT
+    s.season_name,
+    ROUND(AVG(ps.age),2) AS average_age
+FROM playerseasonstats ps
+JOIN season s
+ON ps.season_id = s.season_id
+GROUP BY s.season_name
+ORDER BY s.season_name;
+
+
+-- 13: Which teams rely on younger players?
+SELECT
+    t.team_code,
+    ROUND(AVG(ps.age),1) AS average_age
+FROM playerseasonstats ps
+JOIN team t
+ON ps.team_code=t.team_code
+GROUP BY t.team_code
+ORDER BY average_age;
+
+
+-- 14: Which countries produce the most MVP winners?
+SELECT
+  c.country_code,
+  COUNT(DISTINCT m.player_id) AS mvp_players
+FROM
+  mvp_award m
+  JOIN player p ON m.player_id = p.player_id
+  JOIN country c ON p.country_id = c.country_id
+
+GROUP BY
+  c.country_code
+ORDER BY
+  mvp_players DESC;
+
+
+-- 15: Which colleges produce championship players?
+SELECT
+    c.college_name,
+    COUNT(DISTINCT cp.player_id) AS champions
+FROM championteamplayer cp
+JOIN playercollege pc ON cp.player_id = pc.player_id
+JOIN college c ON pc.college_id = c.college_id
+GROUP BY c.college_name
+ORDER BY champions DESC;
