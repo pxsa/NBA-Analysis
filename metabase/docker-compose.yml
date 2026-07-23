@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: nba_analysis
+    ports:
+      - '3307:3306' # THIS line killed me!!!!
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - '3000:3000'
+    volumes:
+      - metabase_data:/metabase-data
+    environment:
+      MB_DB_FILE: /metabase-data/metabase.db
+
+
+volumes:
+  mysql_data:
+  metabase_data:
