@@ -23,36 +23,16 @@ This project collects raw NBA statistics from Basketball-Reference, cleans and s
 
 ## Features
 
-**Web Scraping**
-- Automated data collection from Basketball-Reference
-- Extraction of player information, seasonal statistics, championship rosters, and MVP data
 
-**Data Preprocessing**
-- Cleaning and standardizing raw data
-- Feature engineering
-- Missing value handling
+| Area | Description |
+|---|---|
+| Web Scraping | Automated data collection from Basketball-Reference, including player information, seasonal statistics, championship rosters, and MVP data |
+| Data Preprocessing | Cleaning and standardizing raw data, feature engineering, and missing value handling |
+| Relational Database | Normalized MySQL schema (11+ tables) with foreign key relationships and efficient SQL querying |
+| Exploratory Data Analysis | Statistical summaries, data visualization, and hypothesis testing |
+| Machine Learning | Feature scaling with StandardScaler, player clustering using K-Means, PCA visualization of clusters, and cluster profiling and interpretation |
+| Business Intelligence | Interactive dashboards using Metabase, SQL analytics, KPI visualizations, and cluster-based player analysis |
 
-**Relational Database**
-- Normalized MySQL schema (11+ tables)
-- Foreign key relationships
-- Efficient SQL querying
-
-**Exploratory Data Analysis**
-- Statistical summaries
-- Data visualization
-- Hypothesis testing
-
-**Machine Learning**
-- Feature scaling with StandardScaler
-- Player clustering using K-Means
-- PCA visualization of clusters
-- Cluster profiling and interpretation
-
-**Business Intelligence**
-- Interactive dashboards using Metabase
-- SQL analytics
-- KPI visualizations
-- Cluster-based player analysis
 
 ## Tech Stack
 
