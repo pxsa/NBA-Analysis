@@ -185,3 +185,86 @@ JOIN playercollege pc ON cp.player_id = pc.player_id
 JOIN college c ON pc.college_id = c.college_id
 GROUP BY c.college_name
 ORDER BY champions DESC;
+
+
+-- 16: Number of players by cluster
+SELECT
+  CASE cluster
+    WHEN 0 THEN 'Professional'
+    WHEN 1 THEN 'Casual'
+    WHEN 2 THEN 'Veteran'
+    WHEN 3 THEN 'Hardcore'
+    ELSE 'Unknown'
+  END AS cluster_name,
+  COUNT(*) AS number_of_players,
+  ROUND(COUNT(*) * 100 / (SELECT COUNT(*) FROM playerseasonstats), 2) AS percentage
+FROM
+  playerseasonstats
+GROUP BY
+  cluster
+ORDER BY
+  number_of_players DESC
+
+
+-- 17: Average Win Shares by cluster
+SELECT
+  CASE cluster
+    WHEN 0 THEN 'Professional'
+    WHEN 1 THEN 'Casual'
+    WHEN 2 THEN 'Veteran'
+    WHEN 3 THEN 'Hardcore'
+  END AS cluster_name,
+  round(avg(s.win_shares), 2) AS avg_win_shares
+FROM
+  playerseasonstats s
+GROUP BY
+  cluster_name
+
+
+-- 18: Average age by cluster
+SELECT
+  CASE cluster
+    WHEN 0 THEN 'Professional'
+    WHEN 1 THEN 'Casual'
+    WHEN 2 THEN 'Veteran'
+    WHEN 3 THEN 'Hardcore'
+  END AS cluster_name,
+  round(avg(age), 2) AS avg_age
+FROM
+  playerseasonstats
+GROUP BY
+  cluster_name
+
+
+-- 19: Average minutes by cluster
+SELECT
+  CASE cluster
+    WHEN 0 THEN 'Professional'
+    WHEN 1 THEN 'Casual'
+    WHEN 2 THEN 'Veteran'
+    WHEN 3 THEN 'Hardcore'
+  END AS cluster_name,
+  round(avg(minutes)) AS avg_age
+FROM
+  playerseasonstats
+GROUP BY
+  cluster_name
+
+
+-- 20: Average statistics by cluster
+SELECT
+    CASE cluster
+	WHEN 0 THEN 'Professional'
+	WHEN 1 THEN 'Casual'
+	WHEN 2 THEN 'Veteran'
+	WHEN 3 THEN 'Hardcore'
+	END as cluster,
+    ROUND(AVG(minutes),0) AS avg_minutes,
+    ROUND(AVG(win_shares),2) AS avg_ws,
+    ROUND(AVG(ws_per_48),3) AS avg_ws48,
+    ROUND(AVG(vorp),2) AS avg_vorp,
+    ROUND(AVG(age),1) AS avg_age,
+    ROUND(AVG(bpm),1) AS avg_experience,
+    ROUND(AVG(games),1) AS avg_games
+FROM playerseasonstats
+GROUP BY cluster;
