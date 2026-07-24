@@ -1,13 +1,11 @@
 # NBA Analysis
 
-An end-to-end NBA data project — from web scraping, through storage in a relational MySQL database, to exploratory data analysis (EDA).
+An end-to-end NBA analytics project that collects player and team data through web scraping, stores it in a normalized MySQL database, performs exploratory data analysis (EDA), applies machine learning to identify player archetypes using K-Means clustering, and presents interactive dashboards with Metabase.
 
-Player information, seasonal advanced stats, championship team rosters, and MVP award data are scraped from the source, cleaned, normalized, and stored in a relational database. The resulting data is then explored through statistical analysis and visualization.
 
 ## Content
 
 - [Features](#features)
-- [Project Structure](#project-structure)
 - [Database Schema](#database-schema)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -15,79 +13,39 @@ Player information, seasonal advanced stats, championship team rosters, and MVP 
 - [Domain Knowledge](#domain-knowledge)
 - [Data Source](#data-source)
 
+
 ## Features
 
 - **Web Scraping**
-  - Extraction of raw HTML from player pages and team pages
-  - Conversion of raw HTML into structured data files
+  - Automated data collection from Basketball-Reference
+  - Extraction of player information, seasonal statistics, championship rosters, and MVP data
 
 - **Data Preprocessing**
-  - Cleaning and standardizing the data
-  - Preparing player information, position, country, college, and season stats
+  - Cleaning and standardizing raw data
+  - Feature engineering
+  - Missing value handling
 
 - **Relational Database**
-  - Schema design and storage in MySQL
-  - 11 normalized tables modeling the relationships within NBA data
+  - Normalized MySQL schema (11+ tables)
+  - Foreign key relationships
+  - Efficient SQL querying
 
-- **Exploratory Data Analysis (EDA)**
-  - Statistical analysis of the data
-  - Examination of variable distributions, correlations, and player performance
+- **Exploratory Data Analysis**
+  - Statistical summaries
+  - Data visualization
+  - Hypothesis testing
 
+- **Machine Learning**
+  - Feature scaling with StandardScaler
+  - Player clustering using K-Means
+  - PCA visualization of clusters
+  - Cluster profiling and interpretation
 
-
-## Project Structure
-
-```
-NBA-Analysis/
-│
-├── Data/
-│   ├── raw_data/
-│   │   ├── players.csv
-│   │   ├── advanced_stats_all_seasons.csv
-│   │   ├── champion_players_all_seasons.csv
-│   │   └── mvp_all_seasons.csv
-│   │
-│   ├── raw_html/
-│   │   ├── advanced_stats/
-│   │   ├── awards/
-│   │   ├── champion_teams/
-│   │   └── league_summary/
-│   │
-│   └── sample/
-│
-├── database/
-│   ├── schema.sql
-│   └── DataBase.ipynb
-│
-├── preprocessing/
-│   └── preprocessing.ipynb
-│
-├── scraping/
-│   ├── players_get_html.ipynb
-│   ├── players_get_html.py
-│   ├── players_parse_html.ipynb
-│   ├── players_parse_html.py
-│   ├── team.ipynb
-│   └── team.py
-│
-├── analysis/
-│   ├── analysis.ipynb
-│   ├── phase3_analysis.ipynb
-│   └── plots/
-│
-├── src/
-│   ├── eda.py
-│   └── preprocessing.py
-│
-├── reports/
-│   └── figures/
-│
-├── run_eda.py
-├── requirements.txt
-├── .env-example
-├── NBA_Domain_Knowledge.md
-└── README.md
-```
+- **Business Intelligence**
+  - Interactive dashboards using Metabase
+  - SQL analytics
+  - KPI visualizations
+  - Cluster-based player analysis
 
 
 
@@ -199,6 +157,20 @@ python run_eda.py
 
 The output — statistical reports and data visualizations — is saved to `reports/figures/`, with the notebook-based analysis figures available in `analysis/plots/`.
 
+### 5. Machine Learning
+
+Run the clustering notebook to generate player clusters.
+
+### 6. Metabase Dashboard
+
+Connect Metabase to the MySQL database to explore:
+
+- Player clusters
+- MVP distribution
+- Championship distribution
+- Position analysis
+- Team performance
+- Advanced SQL reports
 
 
 ## Results
@@ -291,6 +263,24 @@ Overview of feature distributions, position breakdowns, and trends across season
 
 For the full statistical write-up — hypotheses, test statistics, and p-values — see `analysis/analysis.ipynb` and `analysis/phase3_analysis.ipynb`.
 
+
+### Player Clustering
+
+Players are grouped into four clusters using K-Means based on advanced statistics such as:
+
+- Minutes Played
+- Win Shares
+- WS/48
+- VORP
+- Experience
+- Age
+
+The resulting clusters represent:
+
+- Elite Star Players
+- Casual Players
+- Veteran Role Players
+- Rotation / Starting / Hardcore Players
 
 
 ## Domain Knowledge
