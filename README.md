@@ -1,53 +1,66 @@
 # NBA Analysis
 
-An end-to-end NBA analytics project that collects player and team data through web scraping, stores it in a normalized MySQL database, performs exploratory data analysis (EDA), applies machine learning to identify player archetypes using K-Means clustering, and presents interactive dashboards with Metabase.
+An end-to-end NBA analytics project that collects player and team data through web scraping, stores it in a normalized MySQL database, performs exploratory data analysis, applies K-Means clustering to identify player archetypes, and presents the results through interactive Metabase dashboards.
 
+<div align="center">
+  <img src="docs/img/nba-logo.avif" alt="NBA logo">
+</div>
 
-## Content
+## Table of Contents
 
+- [Overview](#overview)
 - [Features](#features)
+- [Tech Stack](#tech-stack)
 - [Database Schema](#database-schema)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Results](#results)
 - [Domain Knowledge](#domain-knowledge)
 - [Data Source](#data-source)
 
+## Overview
+
+This project collects raw NBA statistics from Basketball-Reference, cleans and structures them into a relational database, and analyzes them through exploratory analysis, hypothesis testing, and a K-Means clustering model that groups players into archetypes based on advanced statistics.
 
 ## Features
 
-- **Web Scraping**
-  - Automated data collection from Basketball-Reference
-  - Extraction of player information, seasonal statistics, championship rosters, and MVP data
+**Web Scraping**
+- Automated data collection from Basketball-Reference
+- Extraction of player information, seasonal statistics, championship rosters, and MVP data
 
-- **Data Preprocessing**
-  - Cleaning and standardizing raw data
-  - Feature engineering
-  - Missing value handling
+**Data Preprocessing**
+- Cleaning and standardizing raw data
+- Feature engineering
+- Missing value handling
 
-- **Relational Database**
-  - Normalized MySQL schema (11+ tables)
-  - Foreign key relationships
-  - Efficient SQL querying
+**Relational Database**
+- Normalized MySQL schema (11+ tables)
+- Foreign key relationships
+- Efficient SQL querying
 
-- **Exploratory Data Analysis**
-  - Statistical summaries
-  - Data visualization
-  - Hypothesis testing
+**Exploratory Data Analysis**
+- Statistical summaries
+- Data visualization
+- Hypothesis testing
 
-- **Machine Learning**
-  - Feature scaling with StandardScaler
-  - Player clustering using K-Means
-  - PCA visualization of clusters
-  - Cluster profiling and interpretation
+**Machine Learning**
+- Feature scaling with StandardScaler
+- Player clustering using K-Means
+- PCA visualization of clusters
+- Cluster profiling and interpretation
 
-- **Business Intelligence**
-  - Interactive dashboards using Metabase
-  - SQL analytics
-  - KPI visualizations
-  - Cluster-based player analysis
+**Business Intelligence**
+- Interactive dashboards using Metabase
+- SQL analytics
+- KPI visualizations
+- Cluster-based player analysis
 
+## Tech Stack
 
+- Language: Python 3
+- Database: MySQL
+- Analysis and ML: pandas, scikit-learn (StandardScaler, K-Means, PCA)
+- BI and Dashboards: Metabase
+- Data Source: Basketball-Reference (web scraping)
 
 ## Database Schema
 
@@ -67,31 +80,24 @@ mvp_award
 champion_team_player
 ```
 
-These tables model the relationships between players, teams, seasons, countries, colleges, and NBA awards.
-
-The full database structure is defined in:
-
-```
-database/schema.sql
-```
-
+These tables model the relationships between players, teams, seasons, countries, colleges, and NBA awards. The full database structure is defined in `database/schema.sql`.
 
 ## Installation
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/pxsa/NBA-Analysis.git
 cd NBA-Analysis
 ```
 
-### 2. Install Requirements
+### 2. Install requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Environment Variables
+### 3. Configure environment variables
 
 Rename `.env-example` to `.env` and fill in your database credentials:
 
@@ -103,79 +109,9 @@ PORT=3306
 DATABASE=basketball_db
 ```
 
-
-
-## Usage
-
-### 1. Web Scraping
-
-To run the scraping scripts:
-
-```bash
-python scraping/players_get_html.py
-python scraping/players_parse_html.py
-python scraping/team.py
-```
-
-Or run the notebook versions:
-
-```bash
-jupyter notebook scraping/
-```
-
-### 2. Data Preprocessing
-
-To run the cleaning pipeline:
-
-```bash
-python src/preprocessing.py
-```
-
-Or the notebook version:
-
-```bash
-jupyter notebook preprocessing/preprocessing.ipynb
-```
-
-### 3. Database
-
-First execute the schema to set up the database structure:
-
-```
-database/schema.sql
-```
-
-The processed data is then loaded into the MySQL database.
-
-### 4. Exploratory Data Analysis (EDA)
-
-To run the analysis:
-
-```bash
-python run_eda.py
-```
-
-The output — statistical reports and data visualizations — is saved to `reports/figures/`, with the notebook-based analysis figures available in `analysis/plots/`.
-
-### 5. Machine Learning
-
-Run the clustering notebook to generate player clusters.
-
-### 6. Metabase Dashboard
-
-Connect Metabase to the MySQL database to explore:
-
-- Player clusters
-- MVP distribution
-- Championship distribution
-- Position analysis
-- Team performance
-- Advanced SQL reports
-
-
 ## Results
 
-> **Note:** The captions below are placeholders inferred from figure filenames and section labels (`h1`, `h2`, `q1`, `q2`). Since I haven't reviewed the actual notebook output, edit each caption to reflect your real findings before publishing.
+Note: the captions below are placeholders inferred from figure filenames and section labels (h1, h2, q1, q2). Replace them with your actual findings from the notebooks before publishing.
 
 ### General EDA
 
@@ -261,8 +197,7 @@ Overview of feature distributions, position breakdowns, and trends across season
 
 *Boxplot comparing the `innate_ability` feature across groups tested in Hypothesis 2.*
 
-For the full statistical write-up — hypotheses, test statistics, and p-values — see `analysis/analysis.ipynb` and `analysis/phase3_analysis.ipynb`.
-
+For the full statistical write-up, including hypotheses, test statistics, and p-values, see `analysis/analysis.ipynb` and `analysis/phase3_analysis.ipynb`.
 
 ### Player Clustering
 
@@ -282,16 +217,19 @@ The resulting clusters represent:
 - Veteran Role Players
 - Rotation / Starting / Hardcore Players
 
+<div align="center">
+  <img src="kmeans/plots/player_clusters.png" alt="Clusterig Players">
+</div>
+
+### Metabase Dsashboard
+
+<div align="center">
+  <img src="metabase/plots/dashboard.png" alt="Metabase Dashboard">
+</div>
 
 ## Domain Knowledge
 
-For background on the NBA concepts used throughout this project, see:
-
-```
-NBA_Domain_Knowledge.md
-```
-
-
+For background on the NBA concepts used throughout this project, see `NBA_Domain_Knowledge.md`.
 
 ## Data Source
 
