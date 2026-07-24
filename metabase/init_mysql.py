@@ -46,9 +46,9 @@ try:
     # Test source connection
     with engine.connect() as conn:
         result = conn.execute(text("SELECT 1"))
-        print("✅ Source MySQL connection successful!")
+        print("Source MySQL connection successful!")
 except Exception as e:
-    print(f"❌ Failed to connect to source MySQL: {e}")
+    print(f"Failed to connect to source MySQL: {e}")
     exit(1)
 
 
@@ -61,9 +61,9 @@ try:
     # Test Docker connection
     with docker_engine.connect() as conn:
         result = conn.execute(text("SELECT 1"))
-        print("✅ Docker MySQL connection successful!\n")
+        print("Docker MySQL connection successful!\n")
 except Exception as e:
-    print(f"❌ Failed to connect to Docker MySQL: {e}")
+    print(f"Failed to connect to Docker MySQL: {e}")
     print("3. Try connecting directly: mysql -h {DOCKER_HOST} -P {DOCKER_PORT} -u {DOCKER_USERNAME} -p")
     exit(1)
 
